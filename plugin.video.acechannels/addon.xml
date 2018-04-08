@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.acechannels" name="Ace tripleX" version="0.1.4" provider-name="djokersoft">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0" />
+        <import addon="script.module.urlresolver" />
+        <import addon="script.module.requests" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">view tripleX channels on acestream  </summary>
+		<description lang="en">view tripleX channels on acestream By DjokerTheRipper @djokersoft.</description>
+		<platform>all</platform>
+		<news></news>
+		<genre>adult,uk,usa</genre>
+		<video_guide></video_guide>
+		<video_preview></video_preview>
+	</extension>
+</addon>
