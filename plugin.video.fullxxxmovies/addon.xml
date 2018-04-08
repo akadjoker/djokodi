@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.fullxxxmovies" name="fullxxxmovies" version="0.1.3" provider-name="djokersoft">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0" />
+        <import addon="script.module.urlresolver"   />
+        <import addon="script.module.requests" />
+        <import addon="script.video.F4mProxy"  />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">View Full XXX Movies</summary>
+		<description lang="en">View Full XXX MOvies - By DjokerTheRipper @djokersoft.</description>
+		<platform>all</platform>
+		<news></news>
+		<genre>adult,uk</genre>
+		<video_guide></video_guide>
+		<video_preview></video_preview>
+	</extension>
+</addon>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.djocam4" name="djocam4" version="0.1.3" provider-name="djokersoft">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0" />
+        <import addon="script.video.F4mProxy" />
+        <import addon="script.module.urlresolver" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">View www.cam4.com webcams </summary>
+		<description lang="en">Watch 000's of Real People Naked and Having Sex Live on Webcam 24/7. By DjokerTheRipper @djokersoft. </description>
+		<platform>all</platform>
+		<news></news>
+		<genre>adult,uk</genre>
+		<video_guide></video_guide>
+		<video_preview></video_preview>
+	</extension>
+</addon>
