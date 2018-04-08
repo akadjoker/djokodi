@@ -1,0 +1,2 @@
+# djokodi
+kodi repos
