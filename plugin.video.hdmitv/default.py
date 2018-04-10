@@ -127,7 +127,7 @@ def SUBCATEGORIES(url,name):
     link = getHtml2(url)
     match = re.compile('<div class="short">.+?<a href="(.+?)" title="(.+?)">.+?<img src="(.+?)" .+?',          re.DOTALL).findall(link)
     for url,title,img in match:
-        addDownLink(title, url, 1, "http://hdmi-tv.ru/"+img)
+        addDownLink(title.decode('cp1251'), url, 1, "http://hdmi-tv.ru/"+img)
 
     match2 = re.compile('<div class="navigation" align="center" ><span>(.+?)</span> <span>(.+?)</span> <a href="(.+?)">(.+?)</a>',          re.DOTALL).findall(link)
     if match2:
