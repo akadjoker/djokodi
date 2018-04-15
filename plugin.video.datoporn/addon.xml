@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.datoporn" name="Datoporn" version="0.0.1" provider-name="djokersoft">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0" />
+        <import addon="script.module.python.koding.aio" version="0.0.1"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">MORE THAN 5000 FREE PORN VIDEOS EVERY DAY FOR YOU. THE BEST PORN ONLY IN DATO.PORN. OUR FAITHFUL USERS UPDATE EVERY DAY DATO.PORN WITH THE BEST FREE PORN VIDEOS.</summary>
+		<description lang="en">View porn movies from datoporn</description>
+		<platform>all</platform>
+		<news></news>
+		<genre>adult,uk</genre>
+		<video_guide></video_guide>
+		<video_preview></video_preview>
+	</extension>
+</addon>

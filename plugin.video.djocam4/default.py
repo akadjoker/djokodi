@@ -42,8 +42,14 @@ headers = {'User-Agent': USER_AGENT,
 
 
 
-def log(msg, level=LOGDEBUG):
-    xbmc.log('[%s] %s' % (addonname, msg), level)
+
+def log(module, msg):
+    xbmc.log((u"### [%s] - %s" % (module, msg)).encode('utf-8'), level=xbmc.LOGDEBUG)
+
+
+def notify(script_name, language, string_id):
+    xbmc.executebuiltin((u'Notification(%s,%s)' % (script_name, language(string_id))).encode('utf-8'))
+
 
 def cleantext(text):
     text = text.replace('&amp;', '&')
@@ -207,28 +213,28 @@ def CATEGORIES():
 
     
 def VIDEOLINKS(url, name):
-    try:
-        listhtml = makeRequest(url)
-        with open("cam4.html", "w") as text_file:
-             text_file.write(listhtml)
-    except:
-        log('Oh oh', 'It looks like this website is down.')
-        return None
+    listhtml = makeRequest(url)
     #match = re.compile('profileDataBox"> <!-- preview --> <a href="([^"]+)".*?src="([^"]+)" title="Chat Now Free with ([^"]+)"',  re.DOTALL | re.IGNORECASE).findall(listhtml)
     match = re.compile('profileDataBox"> <!-- preview --> <a href="([^"]+)".*?data-hls-preview-url="(.*?)">.*?src="([^"]+)" title="Chat Now Free with ([^"]+)"',  re.DOTALL | re.IGNORECASE).findall(listhtml)
     count = 0
     for videourl,link, img, name in match:
         name = cleantext(name)
         videourl = "http://www.cam4.com" + videourl
-        addDownLink(name,videourl,2,img)
+        #addDownLink(name,videourl,2,img)
+        addDownLink(name,link,2,img)
+    match2 = re.compile('<div class="pager" id="directoryPager"> <span id="pagerSpan">(.*?)</span> <a href="(.*?)" style="cursor:pointer" data-page="(.*?)">(.*?)</a>',  re.DOTALL | re.IGNORECASE).findall(listhtml)        
+    if match2:
+         addDir("Next Page",match2[0][1],1,'')
+
+        
 
 def PLAYVIDEOLINKS(url, name):
-    #xbmc.Player().play(url)
-    listhtml = getHtml(url, '', mobileagent)
-    match = re.compile('src="(http[^"]+m3u8)', re.DOTALL | re.IGNORECASE).findall(listhtml)
-    if match:
-       videourl = match[0]
-       xbmc.Player().play(videourl)
+    xbmc.Player().play(url)
+    #listhtml = getHtml(url, '', mobileagent)
+    #match = re.compile('src="(http[^"]+m3u8)', re.DOTALL | re.IGNORECASE).findall(listhtml)
+    #if match:
+    #   videourl = match[0]
+    #   xbmc.Player().play(videourl)
        #from F4mProxy import f4mProxyHelper
        #f4mp=f4mProxyHelper()
        #f4mp.playF4mLink(videourl,name,proxy=None,use_proxy_for_chunks=False, maxbitrate=0, simpleDownloader=False, auth=None, streamtype='HLS',setResolved=False,swf=None , #callbackpath="",callbackparam="", iconImage='')

@@ -223,9 +223,14 @@ def VIDEOLINKS(url, name):
     for videopage, img, status, name, age in match:
         name = cleantext(name.strip())
         status = status.replace("\n", "").strip()
-        name = 'Name:' + name + ', Age: ' + age
+        name =  name + ' - Age: ' + age
         videopage = "https://chaturbate.com" + videopage
         addDownLink(name,videopage,2,img)
+    match2 = re.compile('<li><a class="endless_page_link" href="(.*?)">(.*?)</a></li>',re.DOTALL | re.IGNORECASE).findall(listhtml)
+    if match2:
+        for purl,count in match2:
+            addDir("Page ("+count+")","https://chaturbate.com"+purl,1,'')
+            
         
         
 

@@ -118,7 +118,7 @@ def CATEGORIES():
     match = re.compile('<div class="short">.+?<a href="(.+?)" title="(.+?)">.+?<img src="(.+?)" .+?',          re.DOTALL).findall(link)
     #for dummy,url,title,caption,dummy2,img in match:
     for url,title,img in match:
-        addDownLink(title.decode('cp1251'), url, 1, "http://hdmi-tv.ru/"+img)
+        addDownLink(title, url, 1, "http://hdmi-tv.ru/"+img)
 
 
 

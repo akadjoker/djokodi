@@ -76,9 +76,17 @@ def addMenuitem(url, li, folder):
 def endMenu():
  xbmcplugin.endOfDirectory(addon_handle)
 
-
-
+    
 def CATEGORIES():
+
+    addDownLink("Streamago","https://streamango.com/embed/qpesctkrasdnqdad/Big_Booty_POV_720x404_mp4",4,"")
+    addDownLink("streamcherry","https://streamcherry.com/embed/lqabkbqarmcrfato/Big_Booty_POV_720x404_mp4",4,"")
+    addDownLink("dataporn","https://datoporn.co/embed-rtesevrhelwd-658x400.html",4,"")
+    addDownLink("thevideo","https://www.thevideo.cc/embed-dn9afgt6ge9z-658x400.html",4,"")
+    addDownLink("flash","https://www.flashx.to/embed-lcb2cf6lrn4v.html",4,"")
+    addDownLink("openalod","https://openload.co/embed/5LD2ShgKu18/Big_Booty_POV.720x404.mp4",4,"")
+    addDownLink("PopConr","https://www.popcornflix.com/watch/channel/actionthrillers/movie/18-nxv8hss4ednd-clear-and-present-danger",4,"")
+    
 
     addDir("Geral","http://fullxxxmovies.net/",1,"")
     addDir("2018","http://fullxxxmovies.net/tag/2018/",1,"")
@@ -170,7 +178,7 @@ def PLAYVIDEOLINKS(url, name):
     if host:
         xbmc.executebuiltin("XBMC.Notification(Load OpenLoad ;)")
         resolver = urlresolver.resolve(url)
-        xbmcgui.Dialog().ok("url",str(resolver.resolve().msg))
+        #xbmcgui.Dialog().ok("url",resolver)
         xbmc.Player().play(resolver)
     return None    
     
@@ -231,6 +239,16 @@ elif topmode == 2:
 
 elif topmode == 3:
     PLAYVIDEOLINKS(topurl, topname)
+elif topmode == 4:
+    host = urlresolver.HostedMediaFile(topurl)
+    if host:
+        resolver = urlresolver.resolve(topurl)
+        xbmcgui.Dialog().ok("url",resolver)
+        xbmc.Player().play(resolver)
+    else:    
+        xbmcgui.Dialog().ok("Fail resolving")
+   
+    
 
 
 xbmcplugin.endOfDirectory(int(sys.argv[1]))
