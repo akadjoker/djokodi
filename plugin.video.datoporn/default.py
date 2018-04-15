@@ -141,13 +141,13 @@ def VIDEOLINKS(url,name):
         data= match[0].split("|")
         link=None
         if len(data)==107: 
-           link='https://s5.datoporn.co/'+data[96]+'/v.'+data[95]
+           link='https://'+data[26]+'.datoporn.co/'+data[96]+'/v.'+data[95]
            PLAYVIDEO(name,link)
         elif len(data)==106: 
-           link='https://s5.datoporn.co/'+data[95]+'/v.'+data[94]
+           link='https://'+data[26]+'.datoporn.co/'+data[95]+'/v.'+data[94]
            PLAYVIDEO(name,link)
         elif len(data)==105: 
-           link='https://s5.datoporn.co/'+data[94]+'/v.'+data[93]
+           link='https://'+data[26]+'.datoporn.co/'+data[94]+'/v.'+data[93]
            PLAYVIDEO(name,link)
         else:
             notify(None,'NO LInks')
